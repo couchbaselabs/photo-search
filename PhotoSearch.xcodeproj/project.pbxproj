@@ -7,21 +7,178 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938B6F8221923058003EF736 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B6F8121923058003EF736 /* PhotoViewCell.swift */; };
+		938B6F8B2192564C003EF736 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B6F8A2192564C003EF736 /* Photo.swift */; };
 		93B21F302191676D004A5E42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21F2F2191676D004A5E42 /* AppDelegate.swift */; };
-		93B21F322191676D004A5E42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21F312191676D004A5E42 /* ViewController.swift */; };
+		93B21F322191676D004A5E42 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21F312191676D004A5E42 /* SearchViewController.swift */; };
 		93B21F352191676D004A5E42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F332191676D004A5E42 /* Main.storyboard */; };
 		93B21F372191676E004A5E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F362191676E004A5E42 /* Assets.xcassets */; };
 		93B21F3A2191676E004A5E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F382191676E004A5E42 /* LaunchScreen.storyboard */; };
+		93B21F4221916799004A5E42 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21F4121916799004A5E42 /* CameraViewController.swift */; };
+		93B21F4421917918004A5E42 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21F4321917918004A5E42 /* PhotosViewController.swift */; };
+		93B21F4621917F78004A5E42 /* PhotoGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21F4521917F78004A5E42 /* PhotoGridViewCell.swift */; };
+		93B21F4F2192DA42004A5E42 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21F4E2192DA42004A5E42 /* DatabaseManager.swift */; };
+		93B21F5B2192DEA0004A5E42 /* 8.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F512192DE9F004A5E42 /* 8.JPG */; };
+		93B21F5C2192DEA0004A5E42 /* 9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F522192DE9F004A5E42 /* 9.JPG */; };
+		93B21F5D2192DEA0004A5E42 /* 4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F532192DE9F004A5E42 /* 4.JPG */; };
+		93B21F5E2192DEA0004A5E42 /* 5.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F542192DE9F004A5E42 /* 5.JPG */; };
+		93B21F5F2192DEA0004A5E42 /* 7.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F552192DE9F004A5E42 /* 7.JPG */; };
+		93B21F602192DEA0004A5E42 /* 6.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F562192DE9F004A5E42 /* 6.JPG */; };
+		93B21F612192DEA0004A5E42 /* 2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F572192DE9F004A5E42 /* 2.JPG */; };
+		93B21F622192DEA0004A5E42 /* 3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F582192DE9F004A5E42 /* 3.JPG */; };
+		93B21F632192DEA0004A5E42 /* 1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F592192DE9F004A5E42 /* 1.JPG */; };
+		93B21F642192DEA0004A5E42 /* 0.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F5A2192DE9F004A5E42 /* 0.JPG */; };
+		93B21F992193613D004A5E42 /* CouchbaseLiteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B21F7D2193611D004A5E42 /* CouchbaseLiteSwift.framework */; };
+		93B21F9A21936157004A5E42 /* CouchbaseLiteSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93B21F7D2193611D004A5E42 /* CouchbaseLiteSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		93B21F7A2193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9398D9121E03434200464432;
+			remoteInfo = "CBL ObjC";
+		};
+		93B21F7C2193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 275F92741E4D30A4007FD5A2;
+			remoteInfo = "CBL Swift";
+		};
+		93B21F7E2193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9398D91B1E03434200464432;
+			remoteInfo = "CBL ObjC Tests";
+		};
+		93B21F802193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 938CF9EE1E442A3E00291631;
+			remoteInfo = "CBL Objc Tests - iOS App";
+		};
+		93B21F822193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 938CFA061E442A3E00291631;
+			remoteInfo = "CBL Objc Tests - iOS";
+		};
+		93B21F842193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 275F927C1E4D30A4007FD5A2;
+			remoteInfo = "CBL Swift Tests";
+		};
+		93B21F862193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 275FF6131E3FE9DB005F90DD;
+			remoteInfo = "PerfTests-Mac";
+		};
+		93B21F882193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9343F00F207D611600F19A89;
+			remoteInfo = "CBL-EE ObjC";
+		};
+		93B21F8A2193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9343F133207D61AB00F19A89;
+			remoteInfo = "CBL-EE Swift";
+		};
+		93B21F8C2193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9343F151207D61EC00F19A89;
+			remoteInfo = "CBL-EE ObjC Tests";
+		};
+		93B21F8E2193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9343F16D207D62C900F19A89;
+			remoteInfo = "CBL-EE Objc Tests - iOS App";
+		};
+		93B21F902193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9343F188207D633300F19A89;
+			remoteInfo = "CBL-EE Objc Tests - iOS";
+		};
+		93B21F922193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9343F1A2207D636300F19A89;
+			remoteInfo = "CBL-EE Swift Tests";
+		};
+		93B21F942193611D004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9343F1B7207D63BF00F19A89;
+			remoteInfo = "PerfTests-EE-Mac";
+		};
+		93B21F9621936135004A5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 275F92731E4D30A4007FD5A2;
+			remoteInfo = "CBL Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		938B6F8921925587003EF736 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				93B21F9A21936157004A5E42 /* CouchbaseLiteSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		938B6F8121923058003EF736 /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
+		938B6F8A2192564C003EF736 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		93B21F2C2191676D004A5E42 /* PhotoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B21F2F2191676D004A5E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93B21F312191676D004A5E42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93B21F312191676D004A5E42 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		93B21F342191676D004A5E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93B21F362191676E004A5E42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93B21F392191676E004A5E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93B21F3B2191676E004A5E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93B21F4121916799004A5E42 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		93B21F4321917918004A5E42 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		93B21F4521917F78004A5E42 /* PhotoGridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewCell.swift; sourceTree = "<group>"; };
+		93B21F4E2192DA42004A5E42 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		93B21F512192DE9F004A5E42 /* 8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.JPG; sourceTree = "<group>"; };
+		93B21F522192DE9F004A5E42 /* 9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.JPG; sourceTree = "<group>"; };
+		93B21F532192DE9F004A5E42 /* 4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.JPG; sourceTree = "<group>"; };
+		93B21F542192DE9F004A5E42 /* 5.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.JPG; sourceTree = "<group>"; };
+		93B21F552192DE9F004A5E42 /* 7.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.JPG; sourceTree = "<group>"; };
+		93B21F562192DE9F004A5E42 /* 6.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.JPG; sourceTree = "<group>"; };
+		93B21F572192DE9F004A5E42 /* 2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.JPG; sourceTree = "<group>"; };
+		93B21F582192DE9F004A5E42 /* 3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.JPG; sourceTree = "<group>"; };
+		93B21F592192DE9F004A5E42 /* 1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.JPG; sourceTree = "<group>"; };
+		93B21F5A2192DE9F004A5E42 /* 0.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.JPG; sourceTree = "<group>"; };
+		93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CouchbaseLite.xcodeproj; path = "vendor/couchbase-lite-ios/CouchbaseLite.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B21F992193613D004A5E42 /* CouchbaseLiteSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +196,10 @@
 		93B21F232191676D004A5E42 = {
 			isa = PBXGroup;
 			children = (
+				93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */,
 				93B21F2E2191676D004A5E42 /* PhotoSearch */,
 				93B21F2D2191676D004A5E42 /* Products */,
+				93B21F982193613D004A5E42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +214,74 @@
 		93B21F2E2191676D004A5E42 /* PhotoSearch */ = {
 			isa = PBXGroup;
 			children = (
+				93B21F502192DE9F004A5E42 /* Photos */,
+				93B21F4D2192D91F004A5E42 /* Support */,
+				93B21F4E2192DA42004A5E42 /* DatabaseManager.swift */,
 				93B21F2F2191676D004A5E42 /* AppDelegate.swift */,
-				93B21F312191676D004A5E42 /* ViewController.swift */,
-				93B21F332191676D004A5E42 /* Main.storyboard */,
+				93B21F4121916799004A5E42 /* CameraViewController.swift */,
+				93B21F4321917918004A5E42 /* PhotosViewController.swift */,
+				93B21F312191676D004A5E42 /* SearchViewController.swift */,
 				93B21F362191676E004A5E42 /* Assets.xcassets */,
-				93B21F382191676E004A5E42 /* LaunchScreen.storyboard */,
 				93B21F3B2191676E004A5E42 /* Info.plist */,
+				93B21F382191676E004A5E42 /* LaunchScreen.storyboard */,
+				93B21F332191676D004A5E42 /* Main.storyboard */,
 			);
 			path = PhotoSearch;
+			sourceTree = "<group>";
+		};
+		93B21F4D2192D91F004A5E42 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				93B21F4521917F78004A5E42 /* PhotoGridViewCell.swift */,
+				938B6F8121923058003EF736 /* PhotoViewCell.swift */,
+				938B6F8A2192564C003EF736 /* Photo.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		93B21F502192DE9F004A5E42 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				93B21F512192DE9F004A5E42 /* 8.JPG */,
+				93B21F522192DE9F004A5E42 /* 9.JPG */,
+				93B21F532192DE9F004A5E42 /* 4.JPG */,
+				93B21F542192DE9F004A5E42 /* 5.JPG */,
+				93B21F552192DE9F004A5E42 /* 7.JPG */,
+				93B21F562192DE9F004A5E42 /* 6.JPG */,
+				93B21F572192DE9F004A5E42 /* 2.JPG */,
+				93B21F582192DE9F004A5E42 /* 3.JPG */,
+				93B21F592192DE9F004A5E42 /* 1.JPG */,
+				93B21F5A2192DE9F004A5E42 /* 0.JPG */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		93B21F662193611D004A5E42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93B21F7B2193611D004A5E42 /* CouchbaseLite.framework */,
+				93B21F7D2193611D004A5E42 /* CouchbaseLiteSwift.framework */,
+				93B21F7F2193611D004A5E42 /* CouchbaseLiteTests.xctest */,
+				93B21F812193611D004A5E42 /* CBL Tests.app */,
+				93B21F832193611D004A5E42 /* CBL Objc Tests - iOS.xctest */,
+				93B21F852193611D004A5E42 /* CouchbaseLiteSwiftTests.xctest */,
+				93B21F872193611D004A5E42 /* CBLPerfTests */,
+				93B21F892193611D004A5E42 /* CouchbaseLite.framework */,
+				93B21F8B2193611D004A5E42 /* CouchbaseLiteSwift.framework */,
+				93B21F8D2193611D004A5E42 /* CouchbaseLiteTests.xctest */,
+				93B21F8F2193611D004A5E42 /* CBL Tests.app */,
+				93B21F912193611D004A5E42 /* CBL-EE Objc Tests - iOS.xctest */,
+				93B21F932193611D004A5E42 /* CouchbaseLiteSwiftTests.xctest */,
+				93B21F952193611D004A5E42 /* CBLPerfTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93B21F982193613D004A5E42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,10 +294,12 @@
 				93B21F282191676D004A5E42 /* Sources */,
 				93B21F292191676D004A5E42 /* Frameworks */,
 				93B21F2A2191676D004A5E42 /* Resources */,
+				938B6F8921925587003EF736 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				93B21F9721936135004A5E42 /* PBXTargetDependency */,
 			);
 			name = PhotoSearch;
 			productName = PhotoSearch;
@@ -110,6 +332,12 @@
 			mainGroup = 93B21F232191676D004A5E42;
 			productRefGroup = 93B21F2D2191676D004A5E42 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 93B21F662193611D004A5E42 /* Products */;
+					ProjectRef = 93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				93B21F2B2191676D004A5E42 /* PhotoSearch */,
@@ -117,13 +345,124 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		93B21F7B2193611D004A5E42 /* CouchbaseLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CouchbaseLite.framework;
+			remoteRef = 93B21F7A2193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F7D2193611D004A5E42 /* CouchbaseLiteSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CouchbaseLiteSwift.framework;
+			remoteRef = 93B21F7C2193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F7F2193611D004A5E42 /* CouchbaseLiteTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CouchbaseLiteTests.xctest;
+			remoteRef = 93B21F7E2193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F812193611D004A5E42 /* CBL Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "CBL Tests.app";
+			remoteRef = 93B21F802193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F832193611D004A5E42 /* CBL Objc Tests - iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "CBL Objc Tests - iOS.xctest";
+			remoteRef = 93B21F822193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F852193611D004A5E42 /* CouchbaseLiteSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CouchbaseLiteSwiftTests.xctest;
+			remoteRef = 93B21F842193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F872193611D004A5E42 /* CBLPerfTests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = CBLPerfTests;
+			remoteRef = 93B21F862193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F892193611D004A5E42 /* CouchbaseLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CouchbaseLite.framework;
+			remoteRef = 93B21F882193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F8B2193611D004A5E42 /* CouchbaseLiteSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CouchbaseLiteSwift.framework;
+			remoteRef = 93B21F8A2193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F8D2193611D004A5E42 /* CouchbaseLiteTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CouchbaseLiteTests.xctest;
+			remoteRef = 93B21F8C2193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F8F2193611D004A5E42 /* CBL Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "CBL Tests.app";
+			remoteRef = 93B21F8E2193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F912193611D004A5E42 /* CBL-EE Objc Tests - iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "CBL-EE Objc Tests - iOS.xctest";
+			remoteRef = 93B21F902193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F932193611D004A5E42 /* CouchbaseLiteSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CouchbaseLiteSwiftTests.xctest;
+			remoteRef = 93B21F922193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93B21F952193611D004A5E42 /* CBLPerfTests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = CBLPerfTests;
+			remoteRef = 93B21F942193611D004A5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		93B21F2A2191676D004A5E42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B21F622192DEA0004A5E42 /* 3.JPG in Resources */,
+				93B21F612192DEA0004A5E42 /* 2.JPG in Resources */,
+				93B21F5E2192DEA0004A5E42 /* 5.JPG in Resources */,
+				93B21F5D2192DEA0004A5E42 /* 4.JPG in Resources */,
+				93B21F5B2192DEA0004A5E42 /* 8.JPG in Resources */,
+				93B21F5F2192DEA0004A5E42 /* 7.JPG in Resources */,
+				93B21F5C2192DEA0004A5E42 /* 9.JPG in Resources */,
 				93B21F3A2191676E004A5E42 /* LaunchScreen.storyboard in Resources */,
+				93B21F602192DEA0004A5E42 /* 6.JPG in Resources */,
+				93B21F632192DEA0004A5E42 /* 1.JPG in Resources */,
 				93B21F372191676E004A5E42 /* Assets.xcassets in Resources */,
+				93B21F642192DEA0004A5E42 /* 0.JPG in Resources */,
 				93B21F352191676D004A5E42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,12 +474,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93B21F322191676D004A5E42 /* ViewController.swift in Sources */,
+				93B21F4F2192DA42004A5E42 /* DatabaseManager.swift in Sources */,
+				938B6F8B2192564C003EF736 /* Photo.swift in Sources */,
+				93B21F322191676D004A5E42 /* SearchViewController.swift in Sources */,
 				93B21F302191676D004A5E42 /* AppDelegate.swift in Sources */,
+				93B21F4421917918004A5E42 /* PhotosViewController.swift in Sources */,
+				93B21F4221916799004A5E42 /* CameraViewController.swift in Sources */,
+				93B21F4621917F78004A5E42 /* PhotoGridViewCell.swift in Sources */,
+				938B6F8221923058003EF736 /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93B21F9721936135004A5E42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CBL Swift";
+			targetProxy = 93B21F9621936135004A5E42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		93B21F332191676D004A5E42 /* Main.storyboard */ = {
@@ -284,6 +637,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2Q372V7W2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = PhotoSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +659,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2Q372V7W2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = PhotoSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
