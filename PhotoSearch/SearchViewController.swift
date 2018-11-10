@@ -35,7 +35,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         query = QueryBuilder
             .select(SelectResult.expression(Meta.id),
                     SelectResult.property("title"),
-                    SelectResult.property("description"),
+                    SelectResult.property("tags"),
                     SelectResult.property("photo"))
             .from(DataSource.database(DatabaseManager.shared.database))
 
@@ -64,7 +64,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoViewCell") as! PhotoViewCell
         let result = self.data![indexPath.row]
         cell.title = result.string(at: 1)
-        cell.desc = result.string(at: 2)
+        cell.tags = result.array(at: 2)?.toArray() as? [String]
         if let photo = result.blob(at: 3) {
             let thumbnail = Photo.square(photo: photo, size: 72.0, onComplete: { (thumbnail) -> Void in
                 self.updateImage(photo: thumbnail, digest: photo.digest!, indexPath: indexPath)

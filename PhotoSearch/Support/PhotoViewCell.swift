@@ -24,9 +24,12 @@ class PhotoViewCell: UITableViewCell {
         }
     }
     
-    var desc: String? {
+    var tags: Array<String>? {
         didSet {
-            descLabel.text = desc
+            if let allTags = tags {
+                let hashTags = allTags.compactMap{ "#\($0)" }.joined(separator: ", ")
+                descLabel.text = hashTags
+            }
         }
     }
     

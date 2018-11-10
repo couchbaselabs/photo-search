@@ -24,6 +24,7 @@ class DatabaseManager {
                 doc.setValue("product", forKey: "type")
                 doc.setValue("Product \(i)", forKey: "title")
                 doc.setValue("Description of product \(i)", forKey: "description")
+                doc.setValue(generateTags(), forKey: "tags")
                 doc.setValue(Date(), forKey: "createdAt")
                 let data = dataFromResource(name: "\(i % 10)", ofType: "JPG") as Data
                 let blob = Blob(contentType: "image/jpeg", data: data)
@@ -31,6 +32,17 @@ class DatabaseManager {
                 try! database.saveDocument(doc)
             }
         }
+    }
+    
+    let kTags = ["cloth", "jean", "shoes", "books", "software", "grocery", "food", "drink", "toys"];
+    
+    func generateTags() -> [String] {
+        var tags = Set<String>()
+        let num = Int.random(in: 0..<kTags.count)
+        for i in 0...num {
+            tags.insert(kTags[i])
+        }
+        return Array(tags)
     }
     
     func dataFromResource(name: String, ofType: String) -> NSData {
