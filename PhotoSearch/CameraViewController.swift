@@ -9,33 +9,25 @@ import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController {
+    @IBOutlet weak var noCameraImageView: UIImageView!
+    @IBOutlet weak var cameraButton: UIButton!
+    
     var session: AVCaptureSession?
     var output : AVCapturePhotoOutput?
     var preview: AVCaptureVideoPreviewLayer?
     
+    var addPhotoMode = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        #if targetEnvironment(simulator)
-            // Hide everything:
-            let cover = UIView.init(frame: self.view.bounds)
-            cover.backgroundColor = UIColor.white
-            self.view.addSubview(cover)
-        #else
-            startSession()
-        #endif
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        #if targetEnvironment(simulator)
-            self.performSegue(withIdentifier: "PhotoLibrary", sender: nil)
-        #endif
+        startSession()
     }
     
     func startSession() {
         guard let device = AVCaptureDevice.default(for: .video) else {
             NSLog("Warning: No video capture devices found")
+            noCameraImageView.isHidden = false
+            cameraButton.isEnabled = false
             return
         }
         
@@ -66,20 +58,37 @@ class CameraViewController: UIViewController {
         let settings = AVCapturePhotoSettings()
         output.capturePhoto(with: settings, delegate: self)
     }
+    
+    @IBAction func addButtonAction(_ sender: Any) {
+        addPhotoMode = !addPhotoMode;
+        let button = sender as! UIButton
+        button.isSelected = addPhotoMode
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPhotoLibrary" {
+            let navController = segue.destination as! UINavigationController
+            let controller = navController.topViewController as! PhotosViewController
+            controller.addPhotoMode = addPhotoMode
+        } else if segue.identifier == "AddPhoto" {
+            let navController = segue.destination as! UINavigationController
+            let controller = navController.topViewController as! AddPhotoViewController
+            controller.image = (sender as! UIImage)
+        }
+    }
 }
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             let image = UIImage(data: imageData)!
-            let controller = SearchViewController.controller()
-            controller.photo = image
-            controller.present(on: self) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.session?.startRunning()
-                }
+            if (addPhotoMode) {
+                performSegue(withIdentifier: "AddPhoto", sender: image)
+            } else {
+                let controller = SearchViewController.controller()
+                controller.photo = image
+                controller.present(on: self)
             }
-            self.session?.stopRunning()
         }
     }
 }

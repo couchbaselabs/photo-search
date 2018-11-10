@@ -5,7 +5,7 @@
 //  Copyright © 2018 Couchbase. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CouchbaseLiteSwift
 
 class DatabaseManager {
@@ -36,5 +36,21 @@ class DatabaseManager {
     func dataFromResource(name: String, ofType: String) -> NSData {
         let path = Bundle.main.path(forResource: name, ofType: ofType)
         return try! NSData(contentsOfFile: path!, options: [])
+    }
+    
+    func savePhoto(_ photo: UIImage, title: String?) {
+        let doc = MutableDocument()
+        
+        // Photo:
+        let data = photo.jpegData(compressionQuality: 1.0)!
+        let blob = Blob(contentType: "image/jpg", data: data)
+        doc.setBlob(blob, forKey: "photo");
+        
+        // Title:
+        if title != nil {
+            doc.setString(title, forKey: "title")
+        }
+        
+        try! database.saveDocument(doc)
     }
 }

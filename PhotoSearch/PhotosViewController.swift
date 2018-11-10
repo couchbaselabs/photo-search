@@ -9,6 +9,8 @@ import UIKit
 import Photos
 
 class PhotosViewController: UICollectionViewController {
+    var addPhotoMode = false
+    
     var fetchResult: PHFetchResult<PHAsset>!
     var assetCollection: PHAssetCollection!
     var availableWidth: CGFloat = 0
@@ -29,10 +31,6 @@ class PhotosViewController: UICollectionViewController {
             allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
             fetchResult = PHAsset.fetchAssets(with: allPhotosOptions)
         }
-        
-        #if targetEnvironment(simulator)
-            self.navigationItem.leftBarButtonItem = nil
-        #endif
     }
     
     override func viewWillLayoutSubviews() {
@@ -57,6 +55,14 @@ class PhotosViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateCachedAssets()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddPhoto" {
+            let navController = segue.destination as! UINavigationController
+            let controller = navController.topViewController as! AddPhotoViewController
+            controller.image = (sender as! UIImage)
+        }
     }
     
     // MARK: Actions
@@ -91,9 +97,13 @@ class PhotosViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let asset = fetchResult.object(at: indexPath.item)
         imageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .default, options: nil) { (image, info) in
-            let controller = SearchViewController.controller()
-            controller.photo = image
-            controller.present(on: self)
+            if (self.addPhotoMode) {
+                self.performSegue(withIdentifier: "AddPhoto", sender: image)
+            } else {
+                let controller = SearchViewController.controller()
+                controller.photo = image
+                controller.present(on: self)
+            }
         }
     }
     

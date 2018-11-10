@@ -30,6 +30,7 @@
 		93B21F642192DEA0004A5E42 /* 0.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 93B21F5A2192DE9F004A5E42 /* 0.JPG */; };
 		93B21F992193613D004A5E42 /* CouchbaseLiteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B21F7D2193611D004A5E42 /* CouchbaseLiteSwift.framework */; };
 		93B21F9A21936157004A5E42 /* CouchbaseLiteSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93B21F7D2193611D004A5E42 /* CouchbaseLiteSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		93B21FB221965FDD004A5E42 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B21FB121965FDD004A5E42 /* AddPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,7 @@
 		93B21F592192DE9F004A5E42 /* 1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.JPG; sourceTree = "<group>"; };
 		93B21F5A2192DE9F004A5E42 /* 0.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.JPG; sourceTree = "<group>"; };
 		93B21F652193611D004A5E42 /* CouchbaseLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CouchbaseLite.xcodeproj; path = "vendor/couchbase-lite-ios/CouchbaseLite.xcodeproj"; sourceTree = "<group>"; };
+		93B21FB121965FDD004A5E42 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				93B21F4D2192D91F004A5E42 /* Support */,
 				93B21F4E2192DA42004A5E42 /* DatabaseManager.swift */,
 				93B21F2F2191676D004A5E42 /* AppDelegate.swift */,
+				93B21FB121965FDD004A5E42 /* AddPhotoViewController.swift */,
 				93B21F4121916799004A5E42 /* CameraViewController.swift */,
 				93B21F4321917918004A5E42 /* PhotosViewController.swift */,
 				93B21F312191676D004A5E42 /* SearchViewController.swift */,
@@ -481,6 +484,7 @@
 				93B21F4421917918004A5E42 /* PhotosViewController.swift in Sources */,
 				93B21F4221916799004A5E42 /* CameraViewController.swift in Sources */,
 				93B21F4621917F78004A5E42 /* PhotoGridViewCell.swift in Sources */,
+				93B21FB221965FDD004A5E42 /* AddPhotoViewController.swift in Sources */,
 				938B6F8221923058003EF736 /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

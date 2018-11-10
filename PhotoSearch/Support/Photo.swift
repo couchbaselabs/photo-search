@@ -79,4 +79,34 @@ class Photo {
         
         return nil
     }
+    
+    class func square(photo: UIImage?, size: CGFloat, cachekey: String?,
+                      onComplete action: ((UIImage?) -> Void)?) -> UIImage? {
+        if (cache.countLimit != 50) {
+            cache.countLimit = 50
+        }
+        
+        guard let oImage = photo else {
+            return nil
+        }
+        
+        if let key = cachekey, !key.isEmpty {
+            if let cachedImage = cache.object(forKey: key as AnyObject) as? UIImage {
+                return cachedImage
+            }
+        }
+        
+        DispatchQueue.global().async {
+            let square = oImage.square(size: size)
+            DispatchQueue.main.async {
+                if let key = cachekey, !key.isEmpty, let cachedImage = square {
+                    cache.setObject(cachedImage, forKey: key as AnyObject)
+                }
+                if let complete = action {
+                    complete(square)
+                }
+            }
+        }
+        return nil
+    }
 }
