@@ -54,7 +54,7 @@ class DatabaseManager {
         let doc = MutableDocument()
         
         // Photo:
-        let data = photo.jpegData(compressionQuality: 1.0)!
+        let data = photo.jpegData(compressionQuality: 0.8)!
         let blob = Blob(contentType: "image/jpg", data: data)
         doc.setBlob(blob, forKey: "photo");
         

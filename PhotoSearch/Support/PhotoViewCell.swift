@@ -10,7 +10,7 @@ import UIKit
 class PhotoViewCell: UITableViewCell {
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var tagsView: TagCollectionView!
     
     var photo: UIImage? {
         didSet {
@@ -26,10 +26,7 @@ class PhotoViewCell: UITableViewCell {
     
     var tags: Array<String>? {
         didSet {
-            if let allTags = tags {
-                let hashTags = allTags.compactMap{ "#\($0)" }.joined(separator: ", ")
-                descLabel.text = hashTags
-            }
+            tagsView.tags = tags
         }
     }
     
@@ -37,6 +34,5 @@ class PhotoViewCell: UITableViewCell {
         super.prepareForReuse()
         photoView.image = nil
         titleLabel.text = nil
-        descLabel.text = nil
     }
 }

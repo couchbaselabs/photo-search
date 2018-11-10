@@ -2,8 +2,7 @@
 //  AddPhotoViewController.swift
 //  PhotoSearch
 //
-//  Created by Pasin Suriyentrakorn on 11/9/18.
-//  Copyright © 2018 Pasin Suriyentrakorn. All rights reserved.
+//  Copyright © 2018 Couchbase. All rights reserved.
 //
 
 import UIKit
