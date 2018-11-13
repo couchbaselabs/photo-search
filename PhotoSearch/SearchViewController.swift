@@ -18,30 +18,64 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var photo: UIImage?
     var results : [Result]?
     var query: Query!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(SearchViewController.panGesture))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
-        
+
+        var label: String?
         if let photo = self.photo {
             // Do something with the photo:
-            NSLog("photo: \(photo)")
+            label = getPhotoLabel(photo: photo)
         }
-        
-        // For testing, query all docs
-        query = QueryBuilder
-            .select(SelectResult.expression(Meta.id),
-                    SelectResult.property("title"),
-                    SelectResult.property("tags"),
-                    SelectResult.property("photo"))
-            .from(DataSource.database(DatabaseManager.shared.database))
 
+        var json : String
+        if label != nil {
+            print("Selected label: \(label!)")
+            json = """
+            {"WHAT": [ ["._id"],
+                       [".title"],
+                       ["PREDICTION()", "classify", {"image": ["BLOB", ".photo"]}, ".classLabel"],
+                       [".photo"] ],
+             "WHERE": ["=", ["PREDICTION()", "classify", {"image": ["BLOB", ".photo"]}, ".classLabel"], ["$label"]]
+            }
+            """
+        } else {
+            json = """
+            {"WHAT": [ ["._id"],
+                       [".title"],
+                       ["PREDICTION()", "classify", {"image": ["BLOB", ".photo"]}, ".classLabel"],
+                       [".photo"] ]
+            }
+            """
+        }
+        query = Query(database: DatabaseManager.shared.database,
+                      JSONRepresentation: json.data(using: String.Encoding.utf8)!)
+        if label != nil {
+            query.parameters = Parameters().setString(label!, forName: "label")
+        }
         if let rs = try? query.execute() {
             results = rs.allResults()
         }
+    }
+
+    func getPhotoLabel(photo: UIImage) -> String? {
+        let imageData = photo.pngData()!
+        print("Image data is \(imageData.count) bytes")
+        let json = """
+        {"WHAT": [ ["PREDICTION()", "classify", {"image": ["$image"]}, "classLabel"] ]
+        }
+        """
+        let query = Query(database: DatabaseManager.shared.database,
+                          JSONRepresentation: json.data(using: String.Encoding.utf8)!)
+        query.parameters = Parameters().setValue(imageData, forName: "image")
+        if let rs = try? query.execute() {
+            return rs.next()?.string(at: 0)
+        }
+        return nil
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,7 +98,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoViewCell") as! PhotoViewCell
         let result = self.data![indexPath.row]
         cell.title = result.string(at: 1)
-        cell.tags = result.array(at: 2)?.toArray() as? [String]
+        //cell.tags = result.array(at: 2)?.toArray() as? [String]
+        cell.tags = [result.string(at: 2) ?? "???"]
         if let photo = result.blob(at: 3) {
             let thumbnail = Photo.square(photo: photo, size: 72.0, onComplete: { (thumbnail) -> Void in
                 self.updateImage(photo: thumbnail, digest: photo.digest!, indexPath: indexPath)
